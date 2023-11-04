@@ -110,7 +110,6 @@ export default function AddEditTaskModal({ children, data, onSuccess }: any) {
     useEffect(() => {
         if (data) {
             let form = {
-                ...STATIC_FORM,
                 details: data?.details,
                 deadline: data?.deadline?.substring(0, 10),
             };
@@ -118,7 +117,7 @@ export default function AddEditTaskModal({ children, data, onSuccess }: any) {
             validateForm(form, "details");
             validateForm(form, "deadline");
         }
-    }, [data]);
+    }, [show]);
     return (
         <>
             {show && (
