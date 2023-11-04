@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.input-ctn {
+  input[type="text"], input[type="email"], input[type="password"], input[type="date"], textarea {
+    @apply resize-none p-[12px] text-sm placeholder-gray-500 dark:placeholder-gray-100 text-black dark:text-white focus:outline-blue-700 ring-0 w-full border rounded bg-transparent;
+    &.error {
+      @apply border-red-500 focus:outline-red-500 ring-0;
+    }
+  }
+  .error-text {
+    @apply text-xs text-red-500 mt-1;
+  }
+}
+
+.task-card {
+  &.open {
+    @apply border-l-blue-700;
+  }
+  &.in_progress {
+    @apply border-l-purple-700;
+  }
+  &.completed {
+    @apply border-l-green-700;
+  }
+  &.on_hold {
+    @apply border-l-yellow-700;
+  }
+}
