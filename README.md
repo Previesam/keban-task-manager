@@ -73,7 +73,7 @@ yarn run start:dev
 yarn run start:prod
 ```
 
-The backend API will be available at `http://localhost:3000` (or your configured port).
+The backend API will be available at `http://localhost:3000`.
 
 ### Frontend Setup
 
@@ -92,7 +92,11 @@ yarn install
 yarn dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+4. Open your browser:
+   - If running frontend only: [http://localhost:3000](http://localhost:3000)
+   - If backend is already running on port 3000: [http://localhost:3001](http://localhost:3001) (Next.js will auto-assign the next available port)
+
+**Note**: Ensure the backend is running first, then start the frontend. The frontend will automatically connect to the backend API.
 
 ## 📁 Project Structure
 
